@@ -1,0 +1,24 @@
+{
+  "name": "fullstack-ts-app-template",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Fullstack ts application template (Nestjs + React + Inversify)",
+  "keywords": [],
+  "author": "llevkin",
+  "license": "UNLICENSED",
+  "scripts": {},
+  "engines": {
+    "yarn": ">=1.22.22",
+    "pnpm": ">=9.7.1",
+    "npm": ">=10.8.2",
+    "node": "=20"
+  },
+  "dependencies": {
+    "@atao60/fse-cli": "0.1.9",
+    "hygen": "6.2.11",
+    "lodash": "4.17.21",
+    "minimist": "1.2.8",
+    "pnpm": "9.7.1",
+    "prettier": "2.8.8"
+  }
+}

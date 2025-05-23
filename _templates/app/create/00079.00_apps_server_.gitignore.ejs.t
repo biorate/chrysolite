@@ -1,0 +1,62 @@
+---
+to: <%= h.server(`${ROOT}/apps/${SERVER_NAME}/.gitignore`) %>
+unless_exists: true
+---
+# compiled output
+dist
+certs
+node_modules
+allure-results
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# OS
+.DS_Store
+
+# Coverage directory used by tools like istanbul
+coverage
+.coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Config
+/config*.json
+!/config.json
+!/config.debug.json
+
+# Allure
+allure-results/*
+allure-report/*
