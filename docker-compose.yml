@@ -1,0 +1,30 @@
+services:
+  vosk-server: # Для управления голосом - сервис - голос в текст
+    image: alphacep/kaldi-ru
+    restart: unless-stopped
+    ports:
+      - "2700:2700"
+    volumes:
+      - ./.docker/models/vosk-model-small-ru-0.22:/opt/vosk-model-ru/model
+  ollama:
+      image: ollama/ollama
+      restart: unless-stopped
+      ports:
+        - "11434:11434"
+      volumes:
+        - ./.ollama:/root/.ollama
+      deploy:
+        resources:
+          limits:
+            memory: 16G
+  postgres:
+    image: ankane/pgvector
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: chrysolite
+      POSTGRES_PASSWORD: chrysolite
+      POSTGRES_DB: chrysolite
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.postgres:/var/lib/postgresql/data

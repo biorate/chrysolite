@@ -6,3 +6,4 @@ apps/server/node_modules
 
 .dockerignore
 Dockerfile
+.docker

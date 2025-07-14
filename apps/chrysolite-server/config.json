@@ -1,0 +1,22 @@
+{
+  "POSTGRES_DATABASE": "chrysolite",
+  "POSTGRES_HOST": "0.0.0.0",
+  "POSTGRES_PASSWORD": "chrysolite",
+  "POSTGRES_PORT": 5432,
+  "POSTGRES_USERNAME": "chrysolite",
+  "Sequelize": [
+    {
+      "name": "postgres",
+      "options": {
+        "database": "#{POSTGRES_DATABASE}",
+        "dialect": "postgres",
+        "host": "#{POSTGRES_HOST}",
+        "logging": false,
+        "password": "#{POSTGRES_PASSWORD}",
+        "port": "#{POSTGRES_PORT}",
+        "timezone": "+00:00",
+        "username": "#{POSTGRES_USERNAME}"
+      }
+    }
+  ]
+}

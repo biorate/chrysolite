@@ -3,6 +3,9 @@ dist
 node_modules
 tmp
 _tmp
+.docker
+.ollama
+.postgres
 
 # Logs
 logs
