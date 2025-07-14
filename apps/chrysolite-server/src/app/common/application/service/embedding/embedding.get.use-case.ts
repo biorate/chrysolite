@@ -12,12 +12,12 @@ export class EmbeddingGetUseCase {
   @Inject(Types.DocumentDrivenPort)
   protected readonly document: DocumentDrivenPort;
 
-  public async execute(text: string) {
+  public async execute(text: string, threshold: number, limit: number) {
     const embedding = await this.embedding.embed(text);
     return QGetDocuments.execute({
       embedding,
-      threshold: 0,
-      limit: 10,
+      threshold,
+      limit,
     });
   }
 }

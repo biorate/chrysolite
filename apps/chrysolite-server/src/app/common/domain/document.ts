@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsDate, IsOptional } from 'class-validator';
+import { IsString, IsDate, IsOptional } from 'class-validator';
 import { AutoObject } from '@biorate/auto-object';
 
 export class Document extends AutoObject<Document> {

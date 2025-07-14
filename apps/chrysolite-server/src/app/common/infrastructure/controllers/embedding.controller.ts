@@ -14,7 +14,7 @@ export class EmbeddingController {
   @Get()
   @ApiOperation({ summary: 'Find embedding' })
   protected get(@Query() query: BODYGetEmbeddingDTO) {
-    return this.embeddingGet.execute(query.text);
+    return this.embeddingGet.execute(query.text, query.threshold, query.limit);
   }
 
   @Post()
