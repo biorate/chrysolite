@@ -15,7 +15,7 @@ export class BODYCreateEmbeddingDTO {
   public readonly text: string;
 }
 
-export class BODYGetEmbeddingDTO extends BODYCreateEmbeddingDTO {
+export class BODYGetEmbeddingDTO {
   @Transform(toFloat)
   @IsNumber()
   @IsOptional()
@@ -39,4 +39,14 @@ export class BODYGetEmbeddingDTO extends BODYCreateEmbeddingDTO {
     description: 'Limit',
   })
   public readonly limit: number = 3;
+
+  @IsString()
+  @ApiProperty({
+    type: String,
+    required: true,
+    example: 'Hello world!',
+    default: 'Hello world!',
+    description: 'Text for embedding',
+  })
+  public readonly text: string;
 }

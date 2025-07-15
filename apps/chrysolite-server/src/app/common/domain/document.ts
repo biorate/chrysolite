@@ -1,4 +1,4 @@
-import { IsString, IsDate, IsOptional } from 'class-validator';
+import { IsString, IsDate, IsNumber, IsOptional } from 'class-validator';
 import { AutoObject } from '@biorate/auto-object';
 
 export class Document extends AutoObject<Document> {
@@ -11,6 +11,10 @@ export class Document extends AutoObject<Document> {
 
   @IsString()
   public embedding: string;
+
+  @IsNumber()
+  @IsOptional()
+  public similarity?: number;
 
   @IsDate()
   @IsOptional()

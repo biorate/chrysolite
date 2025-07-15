@@ -7,6 +7,7 @@ export class QGetDocuments extends QCommon {
     SELECT 
       id, 
       text,
+      embedding,
       1 - (embedding <=> :embedding) AS similarity,
       last_stamp,
       creation

@@ -1,8 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Types } from '@biorate/inversion';
 import { DocumentDrivenPort, EmbeddingDrivenPort } from '../../ports';
-import { QGetDocuments } from '../../../infrastructure/query';
-import { Document } from '../../../domain';
 
 @Injectable()
 export class EmbeddingGetUseCase {
@@ -14,10 +12,6 @@ export class EmbeddingGetUseCase {
 
   public async execute(text: string, threshold: number, limit: number) {
     const embedding = await this.embedding.embed(text);
-    return QGetDocuments.execute({
-      embedding,
-      threshold,
-      limit,
-    });
+    return this.document.findMany({ embedding, threshold, limit });
   }
 }
