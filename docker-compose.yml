@@ -1,17 +1,16 @@
 services:
   chrysolite:
-    lightcore:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      volumes:
-        - /etc/localtime:/etc/localtime
-      container_name: lightcore
-      hostname: lightcore
-      tty: true
-      restart: unless-stopped
-      ports:
-        - '3000:3000'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime
+    container_name: chrysolite
+    hostname: chrysolite
+    tty: true
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
   #  vosk-server: # Для управления голосом - сервис - голос в текст
   #    image: alphacep/kaldi-ru
   #    restart: unless-stopped
@@ -22,6 +21,8 @@ services:
   ollama:
     image: ollama/ollama
     restart: unless-stopped
+    container_name: ollama
+    hostname: ollama
     ports:
       - '11434:11434'
     volumes:
@@ -33,6 +34,8 @@ services:
   postgres:
     image: ankane/pgvector
     restart: unless-stopped
+    container_name: postgres
+    hostname: postgres
     environment:
       POSTGRES_USER: chrysolite
       POSTGRES_PASSWORD: chrysolite
