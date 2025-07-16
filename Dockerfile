@@ -14,6 +14,7 @@ ARG APP
 ENV APP=$APP
 WORKDIR /app
 RUN npm i -g pnpm@9.7.1 && \
+    npm rebuild @tensorflow/tfjs-node --build-addon-from-source && \
     apk --no-cache add \
     curl gcompat && \
     addgroup --system --gid 1001 nodejs && \
