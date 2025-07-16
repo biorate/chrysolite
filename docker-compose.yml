@@ -1,22 +1,35 @@
 services:
-  vosk-server: # Для управления голосом - сервис - голос в текст
-    image: alphacep/kaldi-ru
-    restart: unless-stopped
-    ports:
-      - "2700:2700"
-    volumes:
-      - ./.docker/models/vosk-model-small-ru-0.22:/opt/vosk-model-ru/model
-  ollama:
-      image: ollama/ollama
+  chrysolite:
+    lightcore:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      volumes:
+        - /etc/localtime:/etc/localtime
+      container_name: lightcore
+      hostname: lightcore
+      tty: true
       restart: unless-stopped
       ports:
-        - "11434:11434"
-      volumes:
-        - ./.ollama:/root/.ollama
-      deploy:
-        resources:
-          limits:
-            memory: 16G
+        - '3000:3000'
+  #  vosk-server: # Для управления голосом - сервис - голос в текст
+  #    image: alphacep/kaldi-ru
+  #    restart: unless-stopped
+  #    ports:
+  #      - "2700:2700"
+  #    volumes:
+  #      - ./.docker/models/vosk-model-small-ru-0.22:/opt/vosk-model-ru/model
+  ollama:
+    image: ollama/ollama
+    restart: unless-stopped
+    ports:
+      - '11434:11434'
+    volumes:
+      - ./.ollama:/root/.ollama
+    deploy:
+      resources:
+        limits:
+          memory: 16G
   postgres:
     image: ankane/pgvector
     restart: unless-stopped
@@ -25,6 +38,6 @@ services:
       POSTGRES_PASSWORD: chrysolite
       POSTGRES_DB: chrysolite
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - ./.postgres:/var/lib/postgresql/data
