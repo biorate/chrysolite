@@ -52,6 +52,7 @@ coverage
 /config*.json
 !/config.json
 !/config.debug.json
+!/config.production.json
 
 # Allure
 allure-results/*

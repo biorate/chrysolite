@@ -38,7 +38,7 @@ importers:
         specifier: 1.120.0
         version: 1.120.0
       '@biorate/singleton':
-        specifier: ^1.117.0
+        specifier: 1.117.0
         version: 1.117.0
       '@biorate/symbolic':
         specifier: 1.102.0
@@ -186,13 +186,13 @@ importers:
         specifier: 3.3.1
         version: 3.3.1(webpack@5.97.1(webpack-cli@6.0.1))
       stylelint:
-        specifier: ^15.11.0
+        specifier: 15.11.0
         version: 15.11.0(typescript@5.0.4)
       stylelint-config-idiomatic-order:
         specifier: 10.0.0
         version: 10.0.0(stylelint@15.11.0(typescript@5.0.4))
       stylelint-config-standard:
-        specifier: ^34.0.0
+        specifier: 34.0.0
         version: 34.0.0(stylelint@15.11.0(typescript@5.0.4))
       stylelint-csstree-validator:
         specifier: 3.0.0
@@ -238,7 +238,7 @@ importers:
         version: 4.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@biorate/playwright':
         specifier: 1.133.0
-        version: 1.133.0(@playwright/test@1.54.1)(allure-js-commons@2.14.1)(allure-playwright@3.3.2(@playwright/test@1.54.1))(playwright@1.54.1)(reflect-metadata@0.1.14)
+        version: 1.133.0(@playwright/test@1.54.1)(allure-js-commons@3.3.2(allure-playwright@3.3.2(@playwright/test@1.54.1)))(allure-playwright@3.3.2(@playwright/test@1.54.1))(playwright@1.54.1)(reflect-metadata@0.1.14)
       '@types/react':
         specifier: ^18.3.22
         version: 18.3.23
@@ -306,7 +306,7 @@ importers:
         specifier: 1.120.0
         version: 1.120.0
       '@biorate/sequelize':
-        specifier: ^1.120.0
+        specifier: 1.120.0
         version: 1.120.0(sequelize-typescript@2.1.6(@types/node@18.19.119)(@types/validator@13.15.2)(reflect-metadata@0.1.14)(sequelize@6.37.3(pg@8.16.3)))(sequelize@6.37.3(pg@8.16.3))
       '@biorate/vault':
         specifier: 1.120.0
@@ -318,7 +318,7 @@ importers:
         specifier: 10.4.15
         version: 10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(@nestjs/websockets@10.4.15)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.2)
       '@nestjs/event-emitter':
-        specifier: ^3.0.1
+        specifier: 3.0.1
         version: 3.0.1(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/core@10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(@nestjs/websockets@10.4.15)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.2))
       '@nestjs/platform-express':
         specifier: 10.4.15
@@ -327,7 +327,7 @@ importers:
         specifier: 10.4.15
         version: 10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/websockets@10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/core@10.4.15)(reflect-metadata@0.1.14)(rxjs@7.8.2))(rxjs@7.8.2)
       '@nestjs/schedule':
-        specifier: ^6.0.0
+        specifier: 6.0.0
         version: 6.0.0(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/core@10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(@nestjs/websockets@10.4.15)(encoding@0.1.13)(reflect-metadata@0.1.14)(rxjs@7.8.2))
       '@nestjs/serve-static':
         specifier: 4.0.2
@@ -363,7 +363,7 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@types/express@4.17.17)
       pg:
-        specifier: ^8.16.3
+        specifier: 8.16.3
         version: 8.16.3
       serve-favicon:
         specifier: 2.5.0
@@ -920,7 +920,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -8145,13 +8144,13 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@biorate/playwright@1.133.0(@playwright/test@1.54.1)(allure-js-commons@2.14.1)(allure-playwright@3.3.2(@playwright/test@1.54.1))(playwright@1.54.1)(reflect-metadata@0.1.14)':
+  '@biorate/playwright@1.133.0(@playwright/test@1.54.1)(allure-js-commons@3.3.2(allure-playwright@3.3.2(@playwright/test@1.54.1)))(allure-playwright@3.3.2(@playwright/test@1.54.1))(playwright@1.54.1)(reflect-metadata@0.1.14)':
     dependencies:
       '@biorate/run-context': 1.102.1(reflect-metadata@0.1.14)
       '@biorate/symbolic': 1.102.0
       '@biorate/tools': 1.102.1
       '@playwright/test': 1.54.1
-      allure-js-commons: 2.14.1
+      allure-js-commons: 3.3.2(allure-playwright@3.3.2(@playwright/test@1.54.1))
       allure-playwright: 3.3.2(@playwright/test@1.54.1)
       playwright: 1.54.1
       reflect-metadata: 0.1.14

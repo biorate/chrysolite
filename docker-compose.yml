@@ -8,7 +8,7 @@ services:
     container_name: chrysolite
     hostname: chrysolite
     tty: true
-    restart: unless-stopped
+    restart: always
     ports:
       - '3000:3000'
   #  vosk-server: # Для управления голосом - сервис - голос в текст
@@ -20,7 +20,7 @@ services:
   #      - ./.docker/models/vosk-model-small-ru-0.22:/opt/vosk-model-ru/model
   ollama:
     image: ollama/ollama
-    restart: unless-stopped
+    restart: always
     container_name: ollama
     hostname: ollama
     ports:
@@ -33,7 +33,7 @@ services:
           memory: 16G
   postgres:
     image: ankane/pgvector
-    restart: unless-stopped
+    restart: always
     container_name: postgres
     hostname: postgres
     environment:

@@ -2,7 +2,7 @@ import { AxiosPrometheus } from '@biorate/axios-prometheus';
 import { GETOllamaGenerateREQ, GETOllamaGenerateRES } from './dto';
 
 abstract class OllamaApiBase extends AxiosPrometheus {
-  public baseURL = 'http://localhost:11434/api';
+  public baseURL = 'http://ollama:11434/api';
 }
 
 export class GETOllamaGenerate extends OllamaApiBase {
