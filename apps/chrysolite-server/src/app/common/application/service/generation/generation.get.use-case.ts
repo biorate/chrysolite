@@ -16,7 +16,7 @@ export class GenerationGetUseCase {
     const embedding = await this.embedding.embed(text);
     const documents = await this.document.findMany({ embedding, threshold, limit });
     const { data } = await GETOllamaGenerate.fetch({
-      model: 'deepseek-r1:8b',
+      model: 'deepseek-r1',
       prompt: [
         'На основании полученных данных: ',
         documents.map((item) => item.text).join(', '),
