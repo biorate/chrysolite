@@ -1,3 +1,5 @@
+import { PorterStemmerRu } from 'natural';
+import { removeStopwords, rus } from 'stopword';
 import '@tensorflow/tfjs-node';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import {
@@ -11,7 +13,9 @@ export class EmbeddingTensorflowAdapter implements EmbeddingDrivenPort, OnModule
   protected model: UniversalSentenceEncoder;
 
   public async embed(text: string) {
-    const embeddings = await this.model.embed(text);
+    const embeddings = await this.model.embed(
+      removeStopwords(PorterStemmerRu.tokenizeAndStem(text), rus).join(' '),
+    );
     return JSON.stringify((await embeddings.array())[0]);
   }
 

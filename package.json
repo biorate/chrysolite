@@ -63,6 +63,7 @@
     "@types/minimist": "1.2.5",
     "@types/mocha": "8.2.2",
     "@types/node": "15.0.2",
+    "@types/stopword": "^2.0.3",
     "@types/traverse": "0.6.32",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.0.0",
@@ -115,7 +116,7 @@
   },
   "dependencies": {
     "@biorate/auto-object": "1.138.1",
-    "@biorate/axios": "1.139.0",
+    "@biorate/axios": "1.149.0",
     "@biorate/config": "1.120.0",
     "@biorate/errors": "1.102.0",
     "@biorate/i18n": "1.120.0",
@@ -126,6 +127,8 @@
     "cross-env": "7.0.3",
     "husky": "8.0.3",
     "i18next": "23.4.2",
-    "lodash": "4.17.21"
+    "lodash": "4.17.21",
+    "natural": "^8.1.0",
+    "stopword": "^3.1.5"
   }
 }

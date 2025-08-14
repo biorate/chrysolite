@@ -20,7 +20,7 @@
   "devDependencies": {
     "@ant-design/icons": "4.7.0",
     "@biorate/playwright": "1.133.0",
-    "@types/react": "^18.3.22",
+    "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "classnames": "^2.5.1",
     "history": "^5.3.0",
@@ -28,7 +28,7 @@
     "i18next-http-backend": "^2.7.3",
     "mobx": "^6.13.7",
     "mobx-react": "^7.6.0",
-    "playwright": "^1.52.0",
+    "playwright": "^1.54.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^6.30.1",
