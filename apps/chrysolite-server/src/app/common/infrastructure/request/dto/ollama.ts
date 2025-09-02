@@ -1,3 +1,5 @@
+import { GETOllamaEmbeddings } from '../ollama';
+
 export type GETOllamaGenerateREQ = {
   model: string;
   prompt: string;
@@ -15,4 +17,13 @@ export type GETOllamaGenerateRES = {
   created_at: string;
   response: string;
   done: boolean;
+};
+
+export type GETOllamaEmbeddingsREQ = {
+  model: string;
+  prompt: string;
+};
+
+export type GETOllamaEmbeddingsRES = {
+  embedding: number[];
 };

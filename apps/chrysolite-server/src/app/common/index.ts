@@ -12,6 +12,7 @@ import {
   DebugHttpAdapter,
   InfoRepositoryAdapter,
   EmbeddingTensorflowAdapter,
+  EmbeddingOllamaAdapter,
   DocumentRepositoryAdapter,
 } from './infrastructure';
 import * as useCases from './application/service';
@@ -49,7 +50,7 @@ import { DebugController } from './infrastructure/controllers/debug.controller';
     },
     {
       provide: Types.EmbeddingDrivenPort,
-      useClass: EmbeddingTensorflowAdapter,
+      useClass: EmbeddingOllamaAdapter,
     },
     {
       provide: Types.DocumentDrivenPort,

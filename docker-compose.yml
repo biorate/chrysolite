@@ -1,16 +1,16 @@
 services:
-  chrysolite:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - /etc/localtime:/etc/localtime
-    container_name: chrysolite
-    hostname: chrysolite
-    tty: true
-    restart: always
-    ports:
-      - '3000:3000'
+#  chrysolite:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    volumes:
+#      - /etc/localtime:/etc/localtime
+#    container_name: chrysolite
+#    hostname: chrysolite
+#    tty: true
+#    restart: always
+#    ports:
+#      - '3000:3000'
   #  vosk-server: # Для управления голосом - сервис - голос в текст
   #    image: alphacep/kaldi-ru
   #    restart: unless-stopped
@@ -18,19 +18,19 @@ services:
   #      - "2700:2700"
   #    volumes:
   #      - ./.docker/models/vosk-model-small-ru-0.22:/opt/vosk-model-ru/model
-  ollama:
-    image: ollama/ollama
-    restart: always
-    container_name: ollama
-    hostname: ollama
-    ports:
-      - '11434:11434'
-    volumes:
-      - ./.ollama:/root/.ollama
-    deploy:
-      resources:
-        limits:
-          memory: 16G
+#  ollama:
+#    image: ollama/ollama
+#    restart: always
+#    container_name: ollama
+#    hostname: ollama
+#    ports:
+#      - '11434:11434'
+#    volumes:
+#      - ./.ollama:/root/.ollama
+#    deploy:
+#      resources:
+#        limits:
+#          memory: 16G
   postgres:
     image: ankane/pgvector
     restart: always
