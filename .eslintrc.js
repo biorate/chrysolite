@@ -65,6 +65,8 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': 0,
     'import/no-dynamic-require': 0,
+    'import/extensions': 0,
+    'import/no-unresolved': 0,
     '@typescript-eslint/no-use-before-define': 0,
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
