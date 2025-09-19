@@ -8,6 +8,10 @@
 - `pnpm run build:debug` - запуск клиента в режиме разработки
 - `pnpm run start:debug` - запуск сервера в режиме разработки
 
+### Запуск mcp-inspector:
+
+`npx @modelcontextprotocol/inspector`
+
 ## Правила создания коммитов:
 
 Мы используем [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) для

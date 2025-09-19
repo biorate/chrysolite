@@ -4,7 +4,7 @@ import {
   GETOllamaGenerateRES,
   GETOllamaEmbeddingsREQ,
   GETOllamaEmbeddingsRES,
-} from './dto';
+} from '../dto';
 
 abstract class OllamaApiBase extends AxiosPrometheus {
   public baseURL = 'http://0.0.0.0:11434/api';

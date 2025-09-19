@@ -1,19 +1,23 @@
+import { randomUUID } from 'crypto';
 import { Types } from '@biorate/inversion';
 import { path } from '@biorate/tools';
 import { ScheduleModule } from '@nestjs/schedule';
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { McpModule } from '@rekog/mcp-nest';
 import {
   ClientRepositoryAdapter,
   DebugHttpAdapter,
   InfoRepositoryAdapter,
   OllamaEmbeddingHttpAdapter,
   DocumentRepositoryAdapter,
+  LangchainRagAdapter,
 } from '@/app/adapter/';
 import * as useCases from '@/app/application/service';
 import * as gateways from '@/app/adapter/websocket';
 import * as controllers from '@/app/adapter/http/in/';
+import * as tools from '@/app/adapter/mcp/in/';
 import { DebugController } from '@/app/adapter/http/in/debug.controller';
 import {
   GetLocaleUseCase,
@@ -32,6 +36,15 @@ import {
     }),
     EventEmitterModule.forRoot({ verboseMemoryLeak: true }),
     ScheduleModule.forRoot(),
+    McpModule.forRoot({
+      name: 'chrysolite-mcp-server',
+      version: '0.0.1',
+      streamableHttp: {
+        enableJsonResponse: false,
+        sessionIdGenerator: () => randomUUID(),
+        statelessMode: false,
+      },
+    }),
     ...Object.values(gateways),
   ],
   controllers: [
@@ -44,6 +57,7 @@ import {
     SetLocaleUseCase,
     GetMetricsUseCase,
     ...Object.values(useCases),
+    ...Object.values(tools),
     {
       provide: Types.ClientDrivenPort,
       useClass: ClientRepositoryAdapter,
@@ -67,6 +81,10 @@ import {
     {
       provide: Types.DocumentDrivenPort,
       useClass: DocumentRepositoryAdapter,
+    },
+    {
+      provide: Types.LangchainRagAdapter,
+      useClass: LangchainRagAdapter,
     },
   ],
 })
