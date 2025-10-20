@@ -112,7 +112,7 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
       },
     });
     this.store = new MemoryVectorStore(this.embeddings);
-    this.promptTemplate = await pull<ChatPromptTemplate>('rlm/rag-prompt');
+    // this.promptTemplate = await pull<ChatPromptTemplate>('rlm/rag-prompt');
     this.inputStateAnnotation = Annotation.Root({
       question: Annotation<string>,
     });
