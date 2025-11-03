@@ -5,14 +5,15 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { McpModule } from '@rekog/mcp-nest';
+// import { McpModule } from '@rekog/mcp-nest';
 import {
   ClientRepositoryAdapter,
   DebugHttpAdapter,
   InfoRepositoryAdapter,
   OllamaEmbeddingHttpAdapter,
   DocumentRepositoryAdapter,
-  LangchainRagAdapter,
+  OpenSerpHttpAdapter,
+  LanggraphRagAdapter,
 } from '@/app/adapter/';
 import * as useCases from '@/app/application/service';
 import * as gateways from '@/app/adapter/websocket';
@@ -36,15 +37,15 @@ import {
     }),
     EventEmitterModule.forRoot({ verboseMemoryLeak: true }),
     ScheduleModule.forRoot(),
-    McpModule.forRoot({
-      name: 'chrysolite-mcp-server',
-      version: '0.0.1',
-      streamableHttp: {
-        enableJsonResponse: false,
-        sessionIdGenerator: () => randomUUID(),
-        statelessMode: false,
-      },
-    }),
+    // McpModule.forRoot({
+    //   name: 'chrysolite-mcp-server',
+    //   version: '0.0.1',
+    //   streamableHttp: {
+    //     enableJsonResponse: false,
+    //     sessionIdGenerator: () => randomUUID(),
+    //     statelessMode: false,
+    //   },
+    // }),
     ...Object.values(gateways),
   ],
   controllers: [
@@ -83,8 +84,12 @@ import {
       useClass: DocumentRepositoryAdapter,
     },
     {
-      provide: Types.LangchainRagAdapter,
-      useClass: LangchainRagAdapter,
+      provide: Types.LanggraphRagAdapter,
+      useClass: LanggraphRagAdapter,
+    },
+    {
+      provide: Types.OpenSerpDrivenPort,
+      useClass: OpenSerpHttpAdapter,
     },
   ],
 })

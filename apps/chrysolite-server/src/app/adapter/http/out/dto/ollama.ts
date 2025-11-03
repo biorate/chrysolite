@@ -1,5 +1,3 @@
-import { GETOllamaEmbeddings } from '../ollama';
-
 export type GETOllamaGenerateREQ = {
   model: string;
   prompt: string;

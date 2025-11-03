@@ -7,6 +7,7 @@ import {
 } from '@/app/application/ports';
 import { GETOllamaGenerate } from '@/app/adapter/http/out/request'; //TODO: into adapter
 import { Document } from '@/app/domain';
+import { LanggraphRagAdapter } from '@/app/adapter';
 
 @Injectable()
 export class GenerationGetUseCase {
@@ -16,7 +17,7 @@ export class GenerationGetUseCase {
   // @Inject(Types.DocumentDrivenPort)
   // protected readonly document: DocumentDrivenPort;
 
-  @Inject(Types.LangchainRagAdapter)
+  @Inject(Types.LanggraphRagAdapter)
   protected readonly rag: RagDrivenPort;
 
   public async execute(text: string, threshold: number, limit: number) {

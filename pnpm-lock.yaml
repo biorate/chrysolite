@@ -58,14 +58,17 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
+      moment:
+        specifier: ^2.30.1
+        version: 2.30.1
       natural:
-        specifier: ^8.1.0
+        specifier: 8.1.0
         version: 8.1.0(socks@2.8.7)
       stopword:
-        specifier: ^3.1.5
+        specifier: 3.1.5
         version: 3.1.5
       zod:
-        specifier: ^3.25.76
+        specifier: 3.25.76
         version: 3.25.76
     devDependencies:
       '@atao60/fse-cli':
@@ -256,7 +259,7 @@ importers:
         version: 4.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@biorate/playwright':
         specifier: 1.133.0
-        version: 1.133.0(@playwright/test@1.54.2)(allure-js-commons@3.3.3(allure-playwright@3.3.3(@playwright/test@1.54.2)))(allure-playwright@3.3.3(@playwright/test@1.54.2))(playwright@1.54.1)(reflect-metadata@0.2.2)
+        version: 1.133.0(@playwright/test@1.54.2)(allure-js-commons@2.14.1)(allure-playwright@3.3.3(@playwright/test@1.54.2))(playwright@1.54.1)(reflect-metadata@0.2.2)
       '@types/react':
         specifier: ^18.3.23
         version: 18.3.23
@@ -325,13 +328,13 @@ importers:
         version: 1.156.2
       '@biorate/sequelize':
         specifier: 1.156.2
-        version: 1.156.2(sequelize-typescript@2.1.6(@types/node@24.8.1)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))
+        version: 1.156.2(sequelize-typescript@2.1.6(@types/node@20.19.13)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))
       '@biorate/vault':
         specifier: 1.156.2
         version: 1.156.2
       '@langchain/community':
         specifier: ^0.3.55
-        version: 0.3.55(87deff2e400d50656f5db003c4ec88a3)
+        version: 0.3.55(196aadde42bae5fad9e2a6284924883c)
       '@langchain/core':
         specifier: ^0.3.75
         version: 0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))
@@ -376,7 +379,7 @@ importers:
         version: 10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@rekog/mcp-nest':
         specifier: ^1.8.2
-        version: 1.8.2(08bbb16eb42fe35ce199253ac2484f1e)
+        version: 1.8.2(0edcc44c209d51fe3ce3e133b25f5616)
       '@tensorflow-models/universal-sentence-encoder':
         specifier: 1.3.3
         version: 1.3.3(@tensorflow/tfjs-converter@4.22.0(@tensorflow/tfjs-core@4.22.0(encoding@0.1.13)))(@tensorflow/tfjs-core@4.22.0(encoding@0.1.13))
@@ -403,7 +406,7 @@ importers:
         version: 2.0.6(@types/express@4.17.17)
       langchain:
         specifier: ^0.3.33
-        version: 0.3.33(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))(@langchain/ollama@0.2.4(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(axios@1.12.2)(handlebars@4.7.8)(openai@5.12.2(ws@8.14.2)(zod@3.25.76))(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3)))(ws@8.14.2)
+        version: 0.3.33(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))(@langchain/ollama@0.2.4(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(axios@1.12.2)(handlebars@4.7.8)(openai@5.12.2(ws@8.14.2)(zod@3.25.76))(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4)))(ws@8.14.2)
       pg:
         specifier: 8.16.3
         version: 8.16.3
@@ -422,7 +425,7 @@ importers:
     devDependencies:
       '@biorate/migrations':
         specifier: 1.158.0
-        version: 1.158.0(@opentelemetry/core@2.1.0(@opentelemetry/api@1.9.0))(encoding@0.1.13)(lodash@4.17.21)(reflect-metadata@0.2.2)(sequelize-typescript@2.1.6(@types/node@24.8.1)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))
+        version: 1.158.0(@opentelemetry/core@2.1.0(@opentelemetry/api@1.9.0))(encoding@0.1.13)(lodash@4.17.21)(reflect-metadata@0.2.2)(sequelize-typescript@2.1.6(@types/node@20.19.13)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))
       '@biorate/mocha':
         specifier: 1.139.0
         version: 1.139.0(mocha-multi-reporters@1.5.1(mocha@10.2.0))(mocha@10.2.0)(reflect-metadata@0.2.2)
@@ -449,7 +452,7 @@ importers:
         version: 10.2.0
       mocha-chai-jest-snapshot:
         specifier: 1.1.4
-        version: 1.1.4(chai@4.3.6)
+        version: 1.1.4(chai@4.3.4)
       mocha-multi-reporters:
         specifier: 1.5.1
         version: 1.5.1(mocha@10.2.0)
@@ -1528,9 +1531,6 @@ packages:
   '@modelcontextprotocol/sdk@1.17.5':
     resolution: {integrity: sha512-QakrKIGniGuRVfWBdMsDea/dx1PNE739QJ7gCM41s9q+qaCYTHCdsIBXQVVXry3mfWAiaM9kT22Hyz53Uw8mfg==}
     engines: {node: '>=18'}
-
-  '@mongodb-js/saslprep@1.3.0':
-    resolution: {integrity: sha512-zlayKCsIjYb7/IdfqxorK5+xUMyi4vOKcFy10wKJYc63NSdKI8mNME+uJqfatkPmOSMMUiojrL58IePKBm3gvQ==}
 
   '@mongodb-js/saslprep@1.3.2':
     resolution: {integrity: sha512-QgA5AySqB27cGTXBFmnpifAi7HxoGUeezwo6p9dI03MuDB6Pp33zgclqVb6oVK3j6I9Vesg0+oojW2XxB59SGg==}
@@ -10672,7 +10672,7 @@ snapshots:
       lodash: 4.17.21
       maskdata: 1.3.3
 
-  '@biorate/migrations@1.158.0(@opentelemetry/core@2.1.0(@opentelemetry/api@1.9.0))(encoding@0.1.13)(lodash@4.17.21)(reflect-metadata@0.2.2)(sequelize-typescript@2.1.6(@types/node@24.8.1)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))':
+  '@biorate/migrations@1.158.0(@opentelemetry/core@2.1.0(@opentelemetry/api@1.9.0))(encoding@0.1.13)(lodash@4.17.21)(reflect-metadata@0.2.2)(sequelize-typescript@2.1.6(@types/node@20.19.13)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))':
     dependencies:
       '@biorate/amqp': 1.156.2
       '@biorate/clickhouse': 1.156.2
@@ -10689,7 +10689,7 @@ snapshots:
       '@biorate/mongodb': 1.156.2
       '@biorate/proxy': 1.156.2
       '@biorate/schema-registry': 1.156.2(@opentelemetry/core@2.1.0(@opentelemetry/api@1.9.0))(encoding@0.1.13)(lodash@4.17.21)(reflect-metadata@0.2.2)
-      '@biorate/sequelize': 1.156.2(sequelize-typescript@2.1.6(@types/node@24.8.1)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))
+      '@biorate/sequelize': 1.156.2(sequelize-typescript@2.1.6(@types/node@20.19.13)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))
       '@biorate/tools': 1.102.1
       '@biorate/vault': 1.156.2
     transitivePeerDependencies:
@@ -10814,13 +10814,13 @@ snapshots:
       - lodash
       - supports-color
 
-  '@biorate/playwright@1.133.0(@playwright/test@1.54.2)(allure-js-commons@3.3.3(allure-playwright@3.3.3(@playwright/test@1.54.2)))(allure-playwright@3.3.3(@playwright/test@1.54.2))(playwright@1.54.1)(reflect-metadata@0.2.2)':
+  '@biorate/playwright@1.133.0(@playwright/test@1.54.2)(allure-js-commons@2.14.1)(allure-playwright@3.3.3(@playwright/test@1.54.2))(playwright@1.54.1)(reflect-metadata@0.2.2)':
     dependencies:
       '@biorate/run-context': 1.102.1(reflect-metadata@0.2.2)
       '@biorate/symbolic': 1.102.0
       '@biorate/tools': 1.102.1
       '@playwright/test': 1.54.2
-      allure-js-commons: 3.3.3(allure-playwright@3.3.3(@playwright/test@1.54.2))
+      allure-js-commons: 2.14.1
       allure-playwright: 3.3.3(@playwright/test@1.54.2)
       playwright: 1.54.1
       reflect-metadata: 0.2.2
@@ -10866,14 +10866,14 @@ snapshots:
       - reflect-metadata
       - supports-color
 
-  '@biorate/sequelize@1.156.2(sequelize-typescript@2.1.6(@types/node@24.8.1)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))':
+  '@biorate/sequelize@1.156.2(sequelize-typescript@2.1.6(@types/node@20.19.13)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)))(sequelize@6.37.7(pg@8.16.3))':
     dependencies:
       '@biorate/config': 1.156.2
       '@biorate/connector': 1.156.2
       '@biorate/errors': 1.102.0
       '@biorate/inversion': 1.156.2
       sequelize: 6.37.7(pg@8.16.3)
-      sequelize-typescript: 2.1.6(@types/node@24.8.1)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3))
+      sequelize-typescript: 2.1.6(@types/node@20.19.13)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3))
 
   '@biorate/shutdown-hook@1.156.0':
     dependencies:
@@ -11187,7 +11187,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@langchain/community@0.3.55(87deff2e400d50656f5db003c4ec88a3)':
+  '@langchain/community@0.3.55(196aadde42bae5fad9e2a6284924883c)':
     dependencies:
       '@browserbasehq/stagehand': 1.14.0(@playwright/test@1.54.2)(deepmerge@4.3.1)(dotenv@17.2.3)(encoding@0.1.13)(openai@5.12.2(ws@8.14.2)(zod@3.25.76))(zod@3.25.76)
       '@ibm-cloud/watsonx-ai': 1.6.12
@@ -11199,7 +11199,7 @@ snapshots:
       flat: 5.0.2
       ibm-cloud-sdk-core: 5.4.2
       js-yaml: 4.1.0
-      langchain: 0.3.33(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))(@langchain/ollama@0.2.4(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(axios@1.12.2)(handlebars@4.7.8)(openai@5.12.2(ws@8.14.2)(zod@3.25.76))(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3)))(ws@8.14.2)
+      langchain: 0.3.33(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))(@langchain/ollama@0.2.4(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(axios@1.12.2)(handlebars@4.7.8)(openai@5.12.2(ws@8.14.2)(zod@3.25.76))(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4)))(ws@8.14.2)
       langsmith: 0.3.67(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))
       openai: 5.12.2(ws@8.14.2)(zod@3.25.76)
       uuid: 10.0.0
@@ -11217,7 +11217,7 @@ snapshots:
       pg: 8.16.3
       playwright: 1.54.2
       redis: 4.7.1
-      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3))
+      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4))
       weaviate-client: 3.8.1(encoding@0.1.13)
       ws: 8.14.2
     transitivePeerDependencies:
@@ -11538,14 +11538,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mongodb-js/saslprep@1.3.0':
-    dependencies:
-      sparse-bitfield: 3.0.3
-
   '@mongodb-js/saslprep@1.3.2':
     dependencies:
       sparse-bitfield: 3.0.3
-    optional: true
 
   '@mswjs/interceptors@0.37.6':
     dependencies:
@@ -11669,13 +11664,13 @@ snapshots:
       class-transformer: 0.5.1
       class-validator: 0.14.0
 
-  '@nestjs/typeorm@11.0.0(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3)))':
+  '@nestjs/typeorm@11.0.0(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4)))':
     dependencies:
       '@nestjs/common': 10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(@nestjs/websockets@10.4.15)(encoding@0.1.13)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       reflect-metadata: 0.2.2
       rxjs: 7.8.2
-      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3))
+      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4))
 
   '@nestjs/websockets@10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
     dependencies:
@@ -13166,7 +13161,7 @@ snapshots:
     dependencies:
       '@redis/client': 1.6.1
 
-  '@rekog/mcp-nest@1.8.2(08bbb16eb42fe35ce199253ac2484f1e)':
+  '@rekog/mcp-nest@1.8.2(0edcc44c209d51fe3ce3e133b25f5616)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.17.5
       '@nestjs/common': 10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -13174,7 +13169,7 @@ snapshots:
       '@nestjs/core': 10.4.15(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(@nestjs/websockets@10.4.15)(encoding@0.1.13)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/jwt': 11.0.0(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))
       '@nestjs/passport': 11.0.5(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
-      '@nestjs/typeorm': 11.0.0(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3)))
+      '@nestjs/typeorm': 11.0.0(@nestjs/common@10.4.15(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4)))
       cookie-parser: 1.4.7
       express: 4.18.2
       passport: 0.7.0
@@ -13183,7 +13178,7 @@ snapshots:
       path-to-regexp: 8.2.0
       reflect-metadata: 0.2.2
       rxjs: 7.8.2
-      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3))
+      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4))
       zod: 3.25.76
       zod-to-json-schema: 3.24.6(zod@3.25.76)
 
@@ -13465,7 +13460,7 @@ snapshots:
 
   '@types/jsonwebtoken@9.0.7':
     dependencies:
-      '@types/node': 24.8.1
+      '@types/node': 20.19.13
 
   '@types/lodash@4.14.170': {}
 
@@ -13500,7 +13495,7 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 18.19.130
+      '@types/node': 20.19.13
       form-data: 4.0.4
 
   '@types/node-forge@1.3.13':
@@ -16722,7 +16717,7 @@ snapshots:
       isstream: 0.1.2
       jsonwebtoken: 9.0.2
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.12.2)
+      retry-axios: 2.6.0(axios@1.12.2(debug@4.4.3))
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -17395,7 +17390,7 @@ snapshots:
 
   known-css-properties@0.29.0: {}
 
-  langchain@0.3.33(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))(@langchain/ollama@0.2.4(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(axios@1.12.2)(handlebars@4.7.8)(openai@5.12.2(ws@8.14.2)(zod@3.25.76))(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3)))(ws@8.14.2):
+  langchain@0.3.33(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))(@langchain/ollama@0.2.4(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(axios@1.12.2)(handlebars@4.7.8)(openai@5.12.2(ws@8.14.2)(zod@3.25.76))(typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4)))(ws@8.14.2):
     dependencies:
       '@langchain/core': 0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76))
       '@langchain/openai': 0.6.11(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))(ws@8.14.2)
@@ -17413,7 +17408,7 @@ snapshots:
       '@langchain/ollama': 0.2.4(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.200.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.14.2)(zod@3.25.76)))
       axios: 1.12.2(debug@4.4.3)
       handlebars: 4.7.8
-      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3))
+      typeorm: 0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4))
     transitivePeerDependencies:
       - '@opentelemetry/api'
       - '@opentelemetry/exporter-trace-otlp-proto'
@@ -18050,6 +18045,19 @@ snapshots:
 
   mobx@6.13.7: {}
 
+  mocha-chai-jest-snapshot@1.1.4(chai@4.3.4):
+    dependencies:
+      '@jest/test-result': 28.1.3
+      chai: 4.3.4
+      chalk: 4.1.2
+      find-package-json: 1.2.0
+      jest-snapshot: 28.1.3
+      jest-util: 28.1.3
+      slash: 3.0.0
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - supports-color
+
   mocha-chai-jest-snapshot@1.1.4(chai@4.3.6):
     dependencies:
       '@jest/test-result': 28.1.3
@@ -18131,7 +18139,7 @@ snapshots:
 
   mongodb@6.18.0(socks@2.8.7):
     dependencies:
-      '@mongodb-js/saslprep': 1.3.0
+      '@mongodb-js/saslprep': 1.3.2
       bson: 6.10.4
       mongodb-connection-string-url: 3.0.2
     optionalDependencies:
@@ -19050,7 +19058,7 @@ snapshots:
   portfinder@1.0.37:
     dependencies:
       async: 3.2.6
-      debug: 4.4.1(supports-color@5.5.0)
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -19855,7 +19863,7 @@ snapshots:
 
   retry-as-promised@7.1.1: {}
 
-  retry-axios@2.6.0(axios@1.12.2):
+  retry-axios@2.6.0(axios@1.12.2(debug@4.4.3)):
     dependencies:
       axios: 1.12.2(debug@4.4.3)
 
@@ -20018,9 +20026,9 @@ snapshots:
 
   sequelize-pool@7.1.0: {}
 
-  sequelize-typescript@2.1.6(@types/node@24.8.1)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)):
+  sequelize-typescript@2.1.6(@types/node@20.19.13)(@types/validator@13.15.3)(reflect-metadata@0.2.2)(sequelize@6.37.7(pg@8.16.3)):
     dependencies:
-      '@types/node': 24.8.1
+      '@types/node': 20.19.13
       '@types/validator': 13.15.3
       glob: 7.2.0
       reflect-metadata: 0.2.2
@@ -21003,25 +21011,6 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3):
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.11
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 24.8.1
-      acorn: 8.15.0
-      acorn-walk: 8.3.4
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 5.8.3
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    optional: true
-
   tsconfig-paths@3.15.0:
     dependencies:
       '@types/json5': 0.0.29
@@ -21142,7 +21131,7 @@ snapshots:
       shiki: 0.14.7
       typescript: 5.0.4
 
-  typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@24.8.1)(typescript@5.8.3)):
+  typeorm@0.3.26(mongodb@6.18.0(socks@2.8.7))(pg@8.16.3)(redis@4.7.1)(reflect-metadata@0.2.2)(ts-node@10.9.2(@types/node@20.19.13)(typescript@5.0.4)):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -21163,7 +21152,7 @@ snapshots:
       mongodb: 6.18.0(socks@2.8.7)
       pg: 8.16.3
       redis: 4.7.1
-      ts-node: 10.9.2(@types/node@24.8.1)(typescript@5.8.3)
+      ts-node: 10.9.2(@types/node@20.19.13)(typescript@5.0.4)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -21600,7 +21589,7 @@ snapshots:
 
   wkx@0.5.0:
     dependencies:
-      '@types/node': 24.8.1
+      '@types/node': 20.19.13
 
   word-wrap@1.2.5: {}
 

@@ -4,3 +4,4 @@ export * from './debug.driven.port';
 export * from './embedding.driven.port';
 export * from './document.driven.port';
 export * from './rag.driven.port';
+export * from './openserp.driven.port';

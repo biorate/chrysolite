@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { inject, Types } from '@biorate/inversion';
 import { IConfig } from '@biorate/config';
@@ -7,6 +8,8 @@ import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { ChatOllamaInput, ChatOllama, OllamaEmbeddings } from '@langchain/ollama';
 import { MemoryVectorStore } from 'langchain/vectorstores/memory';
 import { pull } from 'langchain/hub';
+// import { Tool } from 'langchain/tools';
+import { tool } from '@langchain/core/tools';
 import { AgentExecutor } from 'langchain/agents';
 import { MultiServerMCPClient } from '@langchain/mcp-adapters';
 import {
@@ -82,6 +85,7 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
       this.config.get<ChatOllamaInput>('LangchainRagAdapter.llm', {
         // model: 'deepseek-r1:8b',
         // baseUrl: 'http://db2:11434',
+        // model: 'MFDoom/deepseek-r1-tool-calling:7b',
         model: 'qwen2',
       }),
     );
@@ -112,7 +116,7 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
       },
     });
     this.store = new MemoryVectorStore(this.embeddings);
-    // this.promptTemplate = await pull<ChatPromptTemplate>('rlm/rag-prompt');
+    this.promptTemplate = await pull<ChatPromptTemplate>('rlm/rag-prompt');
     this.inputStateAnnotation = Annotation.Root({
       question: Annotation<string>,
     });
@@ -122,20 +126,41 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
       tool_output: Annotation<string>,
       answer: Annotation<string>,
     });
+
+    const greetingTool = tool(
+      ({ name }) => {
+        return {
+          messages: [
+            `Привет, меня зовут ${name}, я разработчик, мне 40 лет, моё хобби - игра на гитаре, я работаю уже 20 лет!`,
+          ],
+        };
+      },
+      {
+        name: 'greeting-tool',
+        description: 'Используй для приветствия, используй только русский язык',
+        schema: z.object({
+          name: z.string().default('World'),
+        }),
+      },
+    );
+
     this.agent = createReactAgent({
       llm: this.llm,
-      tools: await this.mcpClient.getTools(),
+      // tools: await this.mcpClient.getTools(),
+      tools: [greetingTool],
     });
     this.graph = new StateGraph(this.stateAnnotation)
       // .addNode('retrieve', this.retrieve.bind(this))
       .addNode('mcp_tools', this.mcpTools.bind(this))
       .addNode('generate', this.generate.bind(this))
+      .addNode('prompt', this.prompt.bind(this))
       // .addConditionalEdges('retrieve', this.shouldUseMcpTools.bind(this), {
       //   mcp_tools: 'mcp_tools',
       //   generate: 'generate',
       // })
       .addEdge('__start__', 'mcp_tools')
-      .addEdge('mcp_tools', 'generate')
+      .addEdge('mcp_tools', 'prompt')
+      .addEdge('prompt', 'generate')
       .addEdge('generate', '__end__')
       .compile();
   }
@@ -180,7 +205,7 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
     //   Используя доступные инструменты, ответь на вопрос: ${state.question}.
     //   Контекст: ${state.context.map((doc) => doc.pageContent).join('\n')}
     // `;
-    const result = await this.agent.invoke({
+    const result = this.agent.invoke({
       messages: [{ role: 'user', content: state.question }],
     });
     let answer = '';
@@ -197,12 +222,11 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
     };
   }
 
-  protected async retrieve(state: typeof this.inputStateAnnotation.State) {
-    return { context: await this.store.similaritySearch(state.question) };
-  }
+  // protected async retrieve(state: typeof this.inputStateAnnotation.State) {
+  //   return { context: await this.store.similaritySearch(state.question) };
+  // }
 
-  protected async generate(state: typeof this.stateAnnotation.State) {
-    if (!state.answer) return { answer: '' };
+  protected async prompt(state: typeof this.stateAnnotation.State) {
     const messages = await this.promptTemplate.invoke({
       question: state.question,
       context: `
@@ -211,9 +235,15 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
         дружелюбным, но не слишком болтливым. Контекстная информация приведена 
         ниже. Учитывая контекстную информацию и не имея предварительных знаний, 
         дай ответ на запрос. Отвечай на русском: 
-        ${state.answer}`,
+        ${state.answer}
+      `,
     });
-    const response = await this.llm.invoke(messages);
-    return { answer: response.content };
+  }
+
+  protected async generate(state: typeof this.stateAnnotation.State) {
+    return { answer: '' };
+    // if (!state.answer) return { answer: '' };
+    // const response = await this.llm.invoke(messages);
+    // return { answer: response.content };
   }
 }
