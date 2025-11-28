@@ -7,7 +7,8 @@ import {
 } from '../dto';
 
 abstract class OllamaApiBase extends AxiosPrometheus {
-  public baseURL = 'http://0.0.0.0:11434/api';
+  // public baseURL = 'http://0.0.0.0:11434/api';
+  public baseURL = 'http://192.168.2.123:11434/api';
 
   public timeout = 0;
 }

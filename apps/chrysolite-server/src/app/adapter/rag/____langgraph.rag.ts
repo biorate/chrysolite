@@ -25,7 +25,7 @@ import {
 } from '@langchain/textsplitters';
 
 @Injectable()
-export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
+export class LanggraphRagAdapter implements RagDrivenPort, OnModuleInit {
   @inject(Types.Config) protected config: IConfig;
 
   protected llm!: ChatOllama;
@@ -205,7 +205,7 @@ export class LangchainRagAdapter implements RagDrivenPort, OnModuleInit {
     //   Используя доступные инструменты, ответь на вопрос: ${state.question}.
     //   Контекст: ${state.context.map((doc) => doc.pageContent).join('\n')}
     // `;
-    const result = this.agent.invoke({
+    const result = await this.agent.invoke({
       messages: [{ role: 'user', content: state.question }],
     });
     let answer = '';

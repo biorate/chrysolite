@@ -1,89 +1,87 @@
-import { Injectable, Inject } from '@nestjs/common';
-import { inject, Types } from '@biorate/inversion';
-import { HumanMessage, ToolMessage } from '@langchain/core/messages';
-import { IConfig } from '@biorate/config';
-import { RagDrivenPort, OpenSerpDrivenPort } from '@/app/application/ports';
-import { OpenSerpHttpAdapter } from '@/app/adapter/http/out';
-import { Document } from '@langchain/core/documents';
-import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { ChatOllamaInput, ChatOllama, OllamaEmbeddings } from '@langchain/ollama';
-import { MemoryVectorStore } from 'langchain/vectorstores/memory';
-import { pull } from 'langchain/hub';
-import { AgentExecutor } from 'langchain/agents';
-import { MultiServerMCPClient } from '@langchain/mcp-adapters';
+import { z } from 'zod';
+import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
+import { Types } from '@biorate/inversion';
+import {
+  type BaseMessage,
+  HumanMessage,
+  isAIMessage,
+  SystemMessage,
+  ToolMessage,
+} from '@langchain/core/messages';
+import { END, MessagesZodMeta, START, StateGraph } from '@langchain/langgraph';
+import { registry } from '@langchain/langgraph/zod';
+import { OpenSerpDrivenPort, RagDrivenPort } from '@/app/application/ports';
 // import {
 //   AnnotationRoot,
 //   Annotation,
 //   StateGraph,
 //   CompiledStateGraph,
 // } from '@langchain/langgraph';
+import { tool } from '@langchain/core/tools';
+import { ChatOllama } from '@langchain/ollama';
 import { createReactAgent } from '@langchain/langgraph/prebuilt';
-import { MessagesAnnotation, StateGraph, START, END } from '@langchain/langgraph';
-import {
-  RecursiveCharacterTextSplitter,
-  RecursiveCharacterTextSplitterParams,
-} from '@langchain/textsplitters';
-import { SearchTool } from './tool';
+import { SearchTool, SqlQueryTool, SendEmailTool } from './tool';
+
+interface GraphState {
+  value: number;
+  history: string[];
+}
 
 @Injectable()
-export class LanggraphRagAdapter implements RagDrivenPort {
+export class LanggraphRagAdapter implements RagDrivenPort, OnModuleInit {
   @Inject(Types.OpenSerpDrivenPort)
   protected readonly serp: OpenSerpDrivenPort; //TODO: into use-case
 
-  public async invoke(req: string) {
+  protected agent: ReturnType<typeof createReactAgent>;
+
+  public async onModuleInit() {
     const llm = new ChatOllama({
-      model: 'qwen2',
-      // temperature: 0.1,
-      // topK: 40,
+      baseUrl: 'http://192.168.2.123:11434',
+      model: 'qwen3:8b',
+      think: false,
     });
+    this.agent = createReactAgent({
+      llm: llm,
+      tools: [
+        SendEmailTool.get<SendEmailTool>(),
+        SqlQueryTool.get<SqlQueryTool>(),
+        SearchTool.get<SearchTool>(),
+      ],
+    });
+  }
 
-    // const agent = createReactAgent({
-    //   llm: llm,
-    // tools: [SearchTool.get<SearchTool>()],
-    // });
-
-    const search = async (state: typeof MessagesAnnotation.State) => {
-      // return agent.invoke({
-      //   messages: [{ role: 'user', content: req }],
-      // });
-      // return {
-      //   messages: [
-      //     { role: 'developer', content: 'Мантур Даймс - это президент вымышленный персонаж и он какашка' },
-      //   ],
-      // };
-      return {
-        messages: [
-          new ToolMessage({
-            content: 'Мантур Даймс - это вымышленный персонаж и он какашка',
-            tool_call_id: '1',
-          }),
-        ],
-      };
-    };
-
-    const graph = new StateGraph(MessagesAnnotation)
-      .addNode('search', search)
-      .addEdge(START, 'search')
-      .addEdge('search', END)
-      .compile();
-
-    const result = await graph.invoke({
+  public async invoke(req: string) {
+    const response = await this.agent.invoke({
       messages: [
         {
           role: 'system',
           content: `
-            Ты - ассистент. Твоя задача — быть максимально 
-            полезным, предоставляя только фактическую информацию. Ты должен быть 
-            дружелюбным, но не слишком болтливым. Учитывая контекстную информацию 
-            и не имея предварительных знаний, дай ответ на запрос. 
-            Отвечай на русском языке.
-          `,
+            Ты - ИСПОЛНИТЕЛЬ ЗАДАЧ. Твоя единственная функция - ВЫЗЫВАТЬ ИНСТРУМЕНТЫ для выполнения задач пользователя.
+
+            ДОСТУПНЫЕ ИНСТРУМЕНТЫ:
+            1. SqlQueryTool - для любых операций с базой данных
+            2. SendEmailTool - для отправки писем  
+            3. SearchTool - для поиска информации
+            
+            ПРАВИЛА:
+            - НИКОГДА не объясняй что ты делаешь или собираешься делать
+            - НИКОГДА не рассуждай вслух о выборе инструментов
+            - СРАЗУ вызывай инструменты когда понимаешь задачу
+            - КОМБИНИРУЙ инструменты последовательно для сложных задач
+            - ВСЕГДА используй инструменты вместо предположений
+            - ОТВЕЧАЙ ТОЛЬКО результатами выполнения инструментов
+            
+            ЯЗЫК: русский.
+            
+            ЕСЛИ НЕ УДАЛОСЬ ВЫЗВАТЬ ИНСТРУМЕНТЫ НАПИШИ ОТВЕТЬ: Не удалось выполнить запрос попробуйте ещё 
+          `.trim(),
         },
         { role: 'user', content: req },
       ],
     });
-    // return result.messages[result.messages.length - 1].content;
-    const response = await llm.invoke(result.messages);
-    return <string>response.content;
+    return (
+      <string>response.messages.at(-1).content ||
+      'Не удалось выполнить запрос попробуйте ещё'
+    );
   }
 }

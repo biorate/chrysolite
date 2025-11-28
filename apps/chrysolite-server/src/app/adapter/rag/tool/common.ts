@@ -26,7 +26,7 @@ export abstract class CommonTool extends Singleton {
 
   protected abstract description: string;
 
-  protected abstract schema: ZodType;
+  protected abstract schema: unknown;
 
   protected abstract execute(data: InferInteropZodInput<ZodType>): Promise<string>;
 }
