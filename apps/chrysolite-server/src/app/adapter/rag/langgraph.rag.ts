@@ -35,13 +35,12 @@ export class LanggraphRagAdapter implements RagDrivenPort, OnModuleInit {
   protected agent: ReturnType<typeof createReactAgent>;
 
   public async onModuleInit() {
-    const llm = new ChatOllama({
-      baseUrl: 'http://192.168.2.123:11434',
-      model: 'qwen3:8b',
-      think: false,
-    });
     this.agent = createReactAgent({
-      llm: llm,
+      llm: new ChatOllama({
+        baseUrl: 'http://192.168.2.123:11434',
+        model: 'qwen3:8b',
+        think: false,
+      }),
       tools: [
         SendEmailTool.get<SendEmailTool>(),
         SqlQueryTool.get<SqlQueryTool>(),
