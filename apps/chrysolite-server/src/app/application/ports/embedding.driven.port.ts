@@ -1,3 +1,3 @@
 export interface EmbeddingDrivenPort {
-  embed(text: string): Promise<string>;
+  embed(text: string): Promise<Map<string, number[]>>;
 }

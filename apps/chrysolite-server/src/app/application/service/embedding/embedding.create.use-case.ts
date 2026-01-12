@@ -13,6 +13,6 @@ export class EmbeddingCreateUseCase {
 
   public async execute(text: string) {
     const embedding = await this.embedding.embed(text);
-    return this.document.create(new Document({ text, embedding }));
+    // return this.document.create(new Document({ text, embedding }));
   }
 }
