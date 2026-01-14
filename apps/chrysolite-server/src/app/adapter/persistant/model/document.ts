@@ -19,6 +19,9 @@ export class DocumentModel extends Model {
   @Column({ type: DataType.STRING, allowNull: false })
   embedding: string;
 
+  @Column({ type: DataType.ARRAY, allowNull: false })
+  tags: string[];
+
   @Column({ type: DataType.DATE, allowNull: true })
   last_stamp: Date;
 

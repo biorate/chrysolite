@@ -4,12 +4,14 @@ CREATE TABLE document (
   id BIGSERIAL NOT NULL PRIMARY KEY,
   text TEXT NOT NULL,
   embedding VECTOR(768) NOT NULL,
+  tags VARCHAR[] NOT NULL,
   last_stamp TIMESTAMP NOT NULL,
   creation TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
 SELECT create_creation_stamp_indexes('document');
 
+CREATE INDEX document_tags_index ON document (tags);
 -- Для косинусной схожести
 CREATE INDEX ON document USING hnsw (embedding vector_cosine_ops);
 -- Для евклидова расстояния

@@ -1,4 +1,4 @@
-import { IsString, IsDate, IsNumber, IsOptional } from 'class-validator';
+import { IsString, IsArray, IsDate, IsNumber, IsOptional } from 'class-validator';
 import { AutoObject } from '@biorate/auto-object';
 
 export class Document extends AutoObject<Document> {
@@ -15,6 +15,9 @@ export class Document extends AutoObject<Document> {
   @IsNumber()
   @IsOptional()
   public similarity?: number;
+
+  @IsArray()
+  public tags: string[];
 
   @IsDate()
   @IsOptional()
